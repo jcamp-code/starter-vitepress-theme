@@ -1,17 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext"],
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    // not needed with unbuild
-    "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "types"
-  },
-  "include": ["src"]
+  "extends": "@vue/tsconfig/tsconfig.web.json"
 }
