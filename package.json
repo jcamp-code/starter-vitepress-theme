@@ -1,10 +1,10 @@
 {
   "name": "starter-vitepress-theme",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.0.0",
   "private": true,
   "packageManager": "^pnpm@8.1.0",
-  "description": "Starter repo for Typescript projects and NPM packages",
+  "description": "starter package for building vitepress themes",
   "author": "John Campion",
   "license": "MIT",
   "homepage": "https://github.com/jcamp-code/starter-vitepress-theme",
