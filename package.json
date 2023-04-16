@@ -51,7 +51,7 @@
     "release:patch": "changelogen --release --patch --push && pnpm publish",
     "demo": "run-p dev demo-dev",
     "demo-dev": "cd demo && pnpm dev",
-    "demo-build": "run-p build demo-build-only",
+    "demo-build": "run-s build demo-build-only",
     "demo-build-only": "cd demo && pnpm build",
     "demo-preview": "cd demo && pnpm preview"
   },
