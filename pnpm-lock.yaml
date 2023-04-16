@@ -23,8 +23,8 @@ importers:
         specifier: 3.5.3
         version: 3.5.3
       commitlint-config-unjs:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       eslint:
         specifier: ^8.38.0
         version: 8.38.0
@@ -1794,9 +1794,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /commitlint-config-unjs@1.0.0:
-    resolution: {integrity: sha512-30kCNxIpPSnqYVg7gEBMC4yXv1m1dNA4/fK4++HysVsARQLe+3QA00ZBndFiFRfKncBWIPBBCbqYwyt1bfhveA==}
-    requiresBuild: true
+  /commitlint-config-unjs@1.0.1:
+    resolution: {integrity: sha512-ESBbPlCMgLvxH4RQB9Op7SrzFnK99LKtgXXttiOUDiynRb8xG8p903FYWqc5vA3bUF43GX1EkRHVY5Yc7GnsYw==}
     dependencies:
       '@commitlint/types': 17.4.4
       conventional-changelog-conventionalcommits: 5.0.0
