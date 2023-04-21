@@ -22,38 +22,28 @@
     "theme"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
+    ".": "./src/index.ts"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "src/index.ts",
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "run-s clean dev:start",
-    "dev:start": "run-p dev:tsc dev:copy",
-    "dev:tsc": "tsc --sourcemap -w",
-    "dev:copy": "node scripts/copy -w",
-    "build": "run-s clean build:tsc build:copy",
-    "build:tsc": "tsc && vue-tsc --declaration --emitDeclarationOnly",
-    "build:copy": "node scripts/copy",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --check --write .",
     "prepare": "npx simple-git-hooks",
-    "test": "vitest run",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "test": "npm run lint && npm run type",
+    "dev": "vitepress dev demo",
+    "build": "vitepress build demo",
+    "serve": "npm run demo-build && vitepress serve demo",
     "release": "changelogen --release --push && pnpm publish",
     "release:minor": "changelogen --release --minor --push && pnpm publish",
     "release:major": "changelogen --release --major --push && pnpm publish",
-    "release:patch": "changelogen --release --patch --push && pnpm publish",
-    "demo": "run-p dev demo-dev",
-    "demo-dev": "cd demo && pnpm dev",
-    "demo-build": "run-s build demo-build-only",
-    "demo-build-only": "cd demo && pnpm build",
-    "demo-preview": "cd demo && pnpm preview"
+    "release:patch": "changelogen --release --patch --push && pnpm publish"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-alpha.73"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
@@ -73,10 +63,9 @@
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
     "vite": "^4.2.1",
-    "vitepress": "1.0.0-alpha.70",
+    "vitepress": "1.0.0-alpha.73",
     "vitest": "^0.30.1",
-    "vue": "^3.2.47",
-    "vue-tsc": "^1.2.0"
+    "vue": "^3.2.47"
   },
   "pnpm": {
     "peerDependencyRules": {

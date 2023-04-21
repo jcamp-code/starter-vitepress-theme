@@ -29,8 +29,12 @@
 
     // not needed with unbuild
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
     // "declarationDir": "types"
+    "paths": {
+      "starter-vitepress-theme": ["./src/index.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "demo/.vitepress/**/*.ts"],
+  "exclude": ["node_modules"]
 }

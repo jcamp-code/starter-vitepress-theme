@@ -1,7 +1,20 @@
-import { defineConfig } from 'vitepress'
+import path from 'node:path'
+import { defineConfigWithTheme } from 'vitepress'
+import type { VPThemeConfig } from 'starter-vitepress-theme'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default defineConfigWithTheme<VPThemeConfig>({
+  vite: {
+    build: {
+      minify: false,
+    },
+    resolve: {
+      alias: {
+        'starter-vitepress-theme': path.join(__dirname, '../../src'),
+      },
+    },
+  },
+
   title: 'Template Starter Demo',
   description: 'A VitePress Theme Starter Project',
   themeConfig: {
